@@ -1,4 +1,4 @@
-""One-page player report: identity panel, info cards, form chart and percentile pizza."""
+"""One-page player report: identity panel, info cards, form chart and percentile pizza."""
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -116,7 +116,7 @@ def _draw_touches(fig, rect, touches, colour):
     stats = pitch.bin_statistic(touches["x"], touches["y"], statistic="count", bins=HEATMAP_BINS)
     stats["statistic"] = gaussian_filter(stats["statistic"], HEATMAP_SMOOTHING)
     pitch.heatmap(stats, ax=ax, cmap=cmap, edgecolors="none", zorder=1)
-    ax.set_title("Receptions heat map", fontsize=11, color=TEXT, pad=6)
+    ax.set_title("Touches heat map", fontsize=11, color=TEXT, pad=6)
 
 
 def player_report(summary: dict, values: pd.Series, percentiles: pd.Series, n_peers: int, peer_label: str,
