@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "player-report"
+version = "0.1.0"
+description = "Scouting-style player reports from StatsBomb open data and Transfermarkt"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas",
+    "kagglehub",
+    "statsbomb-tools @ git+https://github.com/macrohaitink/statsbomb-pass-network.git",
+]
+
+[tool.setuptools]
+packages = ["player_report"]

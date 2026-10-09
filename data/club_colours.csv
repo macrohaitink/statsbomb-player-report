@@ -1,0 +1,21 @@
+team,primary,secondary,source
+AC Milan,#FB090B,#000000,colorr
+AS Roma,#8E1F2F,#F0BC42,colorr
+Atalanta,#1E71B8,#000000,colorr
+Bologna,#A21C26,#1A2F48,colorr
+Carpi,#D2232A,#1F3A70,manual
+Chievo,#FCDD09,#0E3B83,manual
+Empoli,#00579C,#FFFFFF,manual
+Fiorentina,#482E92,#A29160,colorr
+Frosinone,#FFDD00,#004393,colorr
+Genoa,#AD1919,#05232F,colorr
+Hellas Verona,#1F3B73,#FCDD09,manual
+Inter Milan,#010E80,#000000,colorr
+Juventus,#000000,#FFFFFF,colorr
+Lazio,#87D8F7,#15366F,colorr
+Napoli,#12A0D7,#003C82,colorr
+Palermo,#F2A7C3,#000000,manual
+Sampdoria,#0F4C9A,#E2001A,manual
+Sassuolo,#00A752,#000000,colorr
+Torino,#8A1E03,#EEB111,colorr
+Udinese,#000000,#FFFFFF,colorr
