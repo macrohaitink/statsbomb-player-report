@@ -118,10 +118,19 @@ def _draw_touches(fig, rect, touches, colour):
     pitch.heatmap(stats, ax=ax, cmap=cmap, edgecolors="none", zorder=1)
     ax.set_title("Touches heat map", fontsize=11, color=TEXT, pad=6)
 
+def _draw_credits(fig, logo):
+    """Footer: StatsBomb logo as the event data credit, then the other sources."""
+    fig.text(0.015, 0.02, "Data:", fontsize=8.5, color=MUTED, va="center")
+    logo_ax = fig.add_axes([0.04, 0.006, 0.075, 0.028])
+    logo_ax.imshow(plt.imread(logo))
+    logo_ax.set_anchor("W")  # left-align the image inside its box
+    logo_ax.axis("off")
+    fig.text(0.12, 0.02, "open data · Transfermarkt (Kaggle: davidcariboo/player-scores)",
+             fontsize=8.5, color=MUTED, va="center")
 
 def player_report(summary: dict, values: pd.Series, percentiles: pd.Series, n_peers: int, peer_label: str,
-                  log: pd.DataFrame, touches: pd.DataFrame, colours: pd.Series):
-    """The full one-page report. `colours` is the club's row of the club colours table."""
+                  log: pd.DataFrame, touches: pd.DataFrame, colours: pd.Series, logo):
+    """The full one-page report. `colours` is the club's row of the club colours table. `logo` is the StatsBomb logo, which their open-data terms ask to show with any published analysis."""
     primary, secondary = colours["primary"], colours["secondary"]
     background = tint(primary, 0.08)
     fig = plt.figure(figsize=FIGSIZE, facecolor=background)
@@ -144,6 +153,5 @@ def player_report(summary: dict, values: pd.Series, percentiles: pd.Series, n_pe
     for i, (group, colour) in enumerate(GROUP_COLOURS.items()):
         fig.text(0.75 + i * 0.06, 0.025, f"■ {group}", color=colour, fontsize=10)
 
-    fig.text(0.015, 0.015, "Data: StatsBomb open data · Transfermarkt (Kaggle: davidcariboo/player-scores)",
-             fontsize=8.5, color=MUTED)
+    _draw_credits(fig, logo)
     return fig
